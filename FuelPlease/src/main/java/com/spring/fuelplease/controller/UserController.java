@@ -1,5 +1,6 @@
 package com.spring.fuelplease.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.sql.rowset.serial.SerialArray;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,9 @@ public class UserController {
 
 	// 마이페이지 이동 요청
 	@GetMapping("/userMypage")
-	public void userMypage(Model model) {
-		
-		model.addAttribute("userInfo", service.getInfo(UserVO.));
+	public void userMypage(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("login");
+		model.addAttribute("userInfo", service.getInfo(id));
 	}
 	
 	

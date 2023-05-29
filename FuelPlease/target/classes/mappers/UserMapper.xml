@@ -4,7 +4,7 @@
     
 <mapper namespace="com.spring.fuelplease.user.mapper.IUserMapper">
 
-	<resultMap type="com.spring.fuelplease.command.UserVO" id="userMap">
+	<resultMap type="com.spring.fuelplease.voCenter.UserVO" id="userMap">
 		<result property="userId" column="user_id" />
 		<result property="userPw" column="user_pw" />
 		<result property="userName" column="user_name" />
